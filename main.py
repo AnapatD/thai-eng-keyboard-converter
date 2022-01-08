@@ -1,4 +1,4 @@
-import sys, os, readchar
+import sys, readchar
 method_banner = ('''
  ___________________
 |                   |
@@ -23,7 +23,7 @@ except ValueError:
     sys.exit(0)
 else:
     txt = str(input('input : '))
-    dict = {
+    The_dict = {
      'A':'ฤ',
      'a':'ฟ', 
      'B':'ฺ', 
@@ -117,9 +117,8 @@ else:
      '?':'ฦ', 
      '/':'ฝ'
      }
-    eng_dct = {k:v for k, v in dict.items()}
-    TH_TO_ENG_Dict = eng_dct
-    ENG_TO_TH_Dict = dict
+    TH_TO_ENG_Dict = dict(map(reversed, The_dict.items()))
+    ENG_TO_TH_Dict = The_dict
     if method == 1:
         trans = txt.maketrans(ENG_TO_TH_Dict)
     elif method == 2:
